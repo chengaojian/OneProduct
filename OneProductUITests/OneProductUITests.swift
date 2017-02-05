@@ -31,6 +31,13 @@ class OneProductUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let app = XCUIApplication()
+        app.images["first"].swipeLeft()
+        app.images["second"].swipeLeft()
+        app.images["three"].buttons["开启新页面"].tap()
+        app.alerts["提示"].buttons["确定"].tap()
+        
     }
     
 }

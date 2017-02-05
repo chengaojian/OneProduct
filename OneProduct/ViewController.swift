@@ -41,8 +41,8 @@ class ViewController: UIViewController , UIScrollViewDelegate{
                 
                 let btn = UIButton(type: .custom)
                 btn.frame.size = CGSize(width: 100, height: 30)
-                btn.backgroundColor = .gray
-                btn.setTitle("开始", for: UIControlState.normal)
+                btn.setTitle("开启新页面", for: UIControlState.normal)
+                btn.setTitleColor(.white, for: .normal)
                 btn.center.x = view.center.x
                 btn.center.y = view.frame.size.height - 50
                 // 裁剪圆角
