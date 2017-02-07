@@ -16,6 +16,9 @@ let TabBarH: CGFloat = 66.5
 let TabBarW = SCREEN_WIDTH / 5.0
 
 class HomePageViewController: UITabBarController {
+    
+    // 跳转TableView页面按钮
+    let tableViewBtn = UIButton()
 
     // 自定义TabBar背景图
     lazy var tabBarBGImageView: UIImageView = {
@@ -66,6 +69,17 @@ class HomePageViewController: UITabBarController {
     func setupView() {
         
         view.backgroundColor = .white
+        tableViewBtn.frame = CGRect(x: view.center.x - 50, y: view.center.y - 25, width: 100, height: 50)
+        tableViewBtn.setTitle("跳转时间轴", for: .normal)
+        tableViewBtn.backgroundColor = .gray
+        tableViewBtn.setTitleColor(.red, for: .normal)
+        tableViewBtn.addTarget(self, action: #selector(tableViewBtnClick), for: .touchUpInside)
+        view.addSubview(tableViewBtn)
+    }
+    
+    func tableViewBtnClick() {
+        print("点击了跳转")
+        self.present(TimeLineViewController(), animated: true, completion: nil)
     }
     
 
